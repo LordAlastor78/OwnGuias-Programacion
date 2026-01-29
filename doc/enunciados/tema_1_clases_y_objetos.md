@@ -17,7 +17,7 @@ Por favor, escribe en impersonal las respuestas.
 
 ## 1. ¿Cuáles son las cuatro características básicas de la programación orientada a objetos? Describe brevemente cada una
 
-### Respuesta
+### MI respuesta es : 
 
 
 ## 2. Cita cuatro lenguajes populares que permitan la programación orientada a objetos
