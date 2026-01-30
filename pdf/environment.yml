@@ -1,4 +1,4 @@
-name: guias-programacion
+name: ownguias-programacion
 channels:
   - conda-forge
 dependencies:
