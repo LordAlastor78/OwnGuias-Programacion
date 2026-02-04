@@ -1,6 +1,5 @@
 package ejercicio1;
 
-import java.util.Scanner;
 
 /* Ejercicio 1: 
 

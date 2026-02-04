@@ -6,31 +6,35 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
 
-    Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-    System.out.print("Introduce el usuario: ");
+        System.out.print("Introduce el usuario: ");
 
-    String usuario = scanner.nextLine();
+        String usuario = scanner.nextLine();
 
-    System.out.print("Introduce el nombre: ");
+        System.out.print("Introduce el nombre: ");
 
-    String nombre = scanner.nextLine();
+        String nombre = scanner.nextLine();
 
-    System.out.print("Introduce los apellidos: ");
+        System.out.print("Introduce los apellidos: ");
 
-    String apellidos = scanner.nextLine();
+        String apellidos = scanner.nextLine();
 
-    System.out.print("Introduce el servidor (o deja en blanco para 'esei.uvigo.es'): ");
+        // Mostrar el nombre completo para usar las variables leídas
+        System.out.println("Nombre completo: " + nombre + " " + apellidos);
 
-    String servidor = scanner.nextLine();
+        System.out.print("Introduce el servidor (o deja en blanco para 'esei.uvigo.es'): ");
 
-    if (servidor.isEmpty()) {
-        servidor = "esei.uvigo.es";
+        String servidor = scanner.nextLine();
+
+        if (servidor.isEmpty()) {
+            servidor = "esei.uvigo.es";
+        }
+
+        String email = usuario + "@" + servidor;
+        System.out.println("El email generado es: " + email);
+
+        scanner.close();
     }
 
-
-    DireccionCorreo direccion1 = new DireccionCorreo(nombre, apellidos, usuario, servidor);
-    
-    DireccionCorreo direccion2 = new DireccionCorreo("Ana", "García López", "ana.garcía", "gmail.com");
-    scanner.close();
 }
