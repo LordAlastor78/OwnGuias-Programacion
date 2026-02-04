@@ -16,28 +16,24 @@ public class Ejercicio3 {
 
         try (Scanner cin = new Scanner(System.in)) {
             System.out.println("Introduce un número entero: ");
-
             int numero = cin.nextInt();
-
-            numero = cin.nextInt();
 
             if (numero % 2 == 0) {
                 System.out.println("Número par");
             } else {
                 System.out.println("Número impar");
+            }
 
-                if (numero == 0) {
-                    System.out.println("Número cero");
-                } else {
-                    System.out.println("Número distinto de cero");
-                    if (numero > 100) {
-                        System.out.println("Número elevado");
-                    } else {
-                        System.out.println("Número bajo");
+            if (numero == 0) {
+                System.out.println("Número cero");
+            } else {
+                System.out.println("Número distinto de cero");
+            }
 
-                    }
-
-                }
+            if (numero > 100) {
+                System.out.println("Número elevado");
+            } else {
+                System.out.println("Número bajo");
             }
         }
     }
