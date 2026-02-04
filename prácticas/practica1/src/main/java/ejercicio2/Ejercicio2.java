@@ -20,19 +20,31 @@ public class Ejercicio2 {
 
         String apellidos = scanner.nextLine();
 
-        // Mostrar el nombre completo para usar las variables leídas
+        // Mostrar el nombre completo
         System.out.println("Nombre completo: " + nombre + " " + apellidos);
 
         System.out.print("Introduce el servidor (o deja en blanco para 'esei.uvigo.es'): ");
-
         String servidor = scanner.nextLine();
 
-        if (servidor.isEmpty()) {
-            servidor = "esei.uvigo.es";
+        // Crear el objeto DireccionCorreo según los datos proporcionados
+        DireccionCorreo dc;
+        if (usuario == null || usuario.isEmpty()) {
+            // Generar usuario automáticamente
+            if (servidor == null || servidor.isEmpty()) {
+                dc = new DireccionCorreo(nombre, apellidos);
+            } else {
+                dc = new DireccionCorreo(nombre, apellidos, servidor);
+            }
+        } else {
+            // Usar usuario proporcionado
+            if (servidor == null || servidor.isEmpty()) {
+                dc = new DireccionCorreo(nombre, apellidos, usuario, "esei.uvigo.es");
+            } else {
+                dc = new DireccionCorreo(nombre, apellidos, usuario, servidor);
+            }
         }
 
-        String email = usuario + "@" + servidor;
-        System.out.println("El email generado es: " + email);
+        System.out.println(dc);
 
         scanner.close();
     }
