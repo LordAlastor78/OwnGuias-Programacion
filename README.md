@@ -113,7 +113,7 @@ Es necesario contar con una cuenta en GitHub. A continuación, se describen los 
 1. **Comprobar si el profesor ha subido un nuevo cuestionario (o cualquier otro cambio)**
    Para ello, lo que se hace es ejecutar pull sobre el remoto `upstream`. Se ejecuta el siguiente comando:
    ```bash
-   git pull upstream main
+   git pull upstream main --no-rebase --no-edit
    ```
    Esto traerá los cambios de la rama principal del repositorio original y los integrará en el repositorio local.
 
