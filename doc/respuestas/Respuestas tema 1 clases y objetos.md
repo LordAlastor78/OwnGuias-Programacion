@@ -28,7 +28,7 @@ Por favor, escribe en impersonal las respuestas.
 ## 4. ¿Qué tres elementos definen a un objeto en programación orientada a objetos?
 
 
-## 5. ¿Qué es una clase? ¿Es lo mismo que un objeto? ¿Qué es una instancia? ¿Todos los lenguajes orientados a objetos manejan el concepto de clase?
+## 5. ¿Qué es una clase? ¿Es lo mismo que un objeto? ¿Qué es una instancia? ¿Todos los lenguajes orientados a objetos manejan el concepto de clase? 
 
 
 
