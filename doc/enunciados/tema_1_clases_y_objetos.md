@@ -64,22 +64,53 @@ El punto de entrada en un programa en Java es el método `main`, que es donde co
 
 ## 10. Intenta ejecutar un poco de Java de forma básica, con los comandos `javac` y `java`. ¿Cómo podemos compilar el programa y ejecutarlo desde linea de comandos? ¿Java es compilado? ¿Qué es la **máquina virtual**? ¿Qué es el *byte-code* y los ficheros `.class`?
 
-### Respuesta
+Para compilar un programa en Java desde la línea de comandos, se utiliza el comando `javac` seguido del nombre del archivo fuente con extensión `.java`. Por ejemplo, si el archivo se llama `Punto.java`, se ejecutaría `javac Punto.java` para compilarlo. Esto generará un archivo con extensión `.class`, que contiene el byte-code, una representación intermedia del código que puede ser ejecutada por la máquina virtual de Java (JVM). Para ejecutar el programa, se utiliza el comando `java` seguido del nombre de la clase sin la extensión `.class`. Por ejemplo, `java Punto` ejecutará el programa. Java es un lenguaje compilado, pero en lugar de compilar directamente a código máquina, compila a byte-code, que es independiente de la plataforma y puede ser ejecutado en cualquier sistema que tenga una JVM instalada. La máquina virtual de Java es un entorno de ejecución que interpreta el byte-code y lo ejecuta en la plataforma específica, proporcionando portabilidad y seguridad al programa.
 
 
 ## 11. En el código anterior de la clase `Punto` ¿Qué es `new`? ¿Qué es un **constructor**? Pon un ejemplo de constructor en una clase `Empleado` que tenga DNI, nombre y apellidos
 
-### Respuesta
+`New` es una palabra clave en Java que se utiliza para crear una nueva instancia de una clase. Cuando se llama a `new`, se asigna memoria para el nuevo objeto y se invoca el constructor de la clase para inicializarlo. Un constructor es un método especial que tiene el mismo nombre que la clase y no tiene un tipo de retorno. Se utiliza para inicializar los atributos del objeto cuando se crea una instancia de la clase.
+
+1. reserva memoria
+2. inicializa el objeto llamando al constructor
+3. Es una "expresión" (puedo a asignar el resultado a una variable, o usarla directamente para llamar a un método, etc)
+
 
 
 ## 12. ¿Qué es la referencia `this`? ¿Se llama igual en todos los lenguajes? Pon un ejemplo del uso de `this` en la clase `Punto`
 
-### Respuesta
+La referencia `this` es una palabra clave en Java que se utiliza dentro de un método o constructor para referirse al objeto actual, es decir, la instancia de la clase en la que se está trabajando. Permite acceder a los atributos y métodos del objeto actual, especialmente cuando hay una ambigüedad entre los nombres de los parámetros y los atributos de la clase. No todos los lenguajes orientados a objetos utilizan la palabra `this`, aunque muchos tienen un concepto similar para referirse al objeto actual. En la clase `Punto`, un ejemplo de uso de `this` podría ser el siguiente:
+```java
+public class Punto {
+    int x;
+    int y;
+
+    public Punto(int x, int y) {
+        this.x = x; // 'this.x' se refiere al atributo de la clase, mientras que 'x' es el parámetro del constructor
+        this.y = y; // 'this.y' se refiere al atributo de la clase, mientras que 'y' es el parámetro del constructor
+    }
+}
+```
+En este ejemplo, `this.x` y `this.y` se utilizan para distinguir entre los atributos de la clase `Punto` y los parámetros del constructor que tienen el mismo nombre. Sin el uso de `this`, el código sería ambiguo y no se podría determinar a qué variable se
+está haciendo referencia.
+
 
 
 ## 13. Añade ahora otro nuevo método que se llame `distanciaA`, que reciba un `Punto` como parámetro y calcule la distancia entre `this` y el punto proporcionado
 
-### Respuesta
+Bien : 
+```java public class Punto {
+    int x;
+    int y;
+    public double distanciaA(Punto otro) {
+        int dx = this.x - otro.x; // Diferencia en x entre el punto actual y el punto proporcionado
+        int dy = this.y - otro.y; // Diferencia en y entre el punto actual y el punto proporcionado
+        return Math.sqrt(dx * dx + dy * dy); // Calcula la distancia utilizando el teorema de Pitágoras
+    }
+}
+```
+En este método `distanciaA`, se recibe un objeto de tipo `Punto` llamado
+`otro`. Se calcula la diferencia en las coordenadas `x` e `y` entre el punto actual (`this`) y el punto proporcionado (`otro`). Luego, se utiliza el teorema de Pitágoras para calcular la distancia entre los dos puntos, devolviendo el resultado como un valor de tipo `double`.
 
 
 ## 14. El paso del `Punto` como parámetro a un método, es **por copia** o **por referencia**, es decir, si se cambia el valor de algún atributo del punto pasado como parámetro, dichos cambios afectan al objeto fuera del método? ¿Qué ocurre si en vez de un `Punto`, se recibiese un entero (`int`) y dicho entero se modificase dentro de la función? 
