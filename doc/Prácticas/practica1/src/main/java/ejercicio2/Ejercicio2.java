@@ -29,12 +29,13 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
 
-        String apellidos;
-        String nombre;
+        String apellidos = "";
+        String nombre = "";
 
         int opcion = 1;
 
-        System.out.println("¿Desea introducir un usuario personalizado o basado en nombres y apellidos? (1: Sí, 0: No)");
+        System.out
+                .println("¿Desea introducir un usuario personalizado o basado en nombres y apellidos? (1: Sí, 0: No)");
 
         opcion = sc.nextInt();
         sc.nextLine();
@@ -58,7 +59,7 @@ public class Ejercicio2 {
                 String usuario = sc.nextLine();
 
                 System.out.println(
-                        "El correo electrónico es: " + apellidos + "" + nombre + "" + usuario + "@esei.uvigo.es");
+                        "El correo electrónico es: " + apellidos + nombre + usuario + "@esei.uvigo.es");
 
                 break;
         }
@@ -68,14 +69,45 @@ public class Ejercicio2 {
 
         System.out.println("Introduzca nombre y apellidos (separados por un único espacio)");
 
+        System.out.println("Nombre: ");
+        nombre = sc.nextLine();
+        System.out.println("Apellidos: ");
         apellidos = sc.nextLine();
 
-        nombre = sc.nextLine();
+    /*  import java.text.Normalizer;
+        
+        if (nombreCompleto == null || nombreCompleto.trim().isEmpty()) {
+            return "";
+        }
+    // 1. Normaliza: descompone "á" en "a" + diacrítico
 
-        char inicialNombre = Character.toLowerCase(nombre.charAt(0));
+    String normalizado = Normalizer.normalize(nombreCompleto, Normalizer.Form.NFD);
 
-        String apellidoMin = apellidos.toLowerCase();
+    // 2. Elimina todos los caracteres no ASCII (como acentos, virgulillas, etc.)
 
-        return inicialNombre + apellidoMin + "@esei.uvigo.es";
+    String sinAcentos = normalizado.replaceAll("[^\\p{ASCII}]", "");
+
+    // 3. Quita espacios y convierte a minúsculas
+
+    return sinAcentos.replaceAll("\\s+", "").toLowerCase();
+} */
+
+        if (nombre != null && apellidos != null) {
+
+            String inicialNombre = nombre.split("")[0].toLowerCase().charAt(0) + "";
+            String apellido1 = apellidos.split(" ")[0];
+            String apellido2 = apellidos.split(" ")[1];
+
+            
+
+
+            return inicialNombre + apellido1 + apellido2 + "@esei.uvigo.es";
+
+        } else {
+
+            return "Error: Nombre o apellidos no válidos.";
+
+        }
+
     }
 }
