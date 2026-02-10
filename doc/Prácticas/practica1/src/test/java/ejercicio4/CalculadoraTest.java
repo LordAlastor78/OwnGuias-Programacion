@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculadoraTest {
+public class CalculadoraTest {
 
     @Test
     void testSumarDosEnteros() {
         Calculadora calc = new Calculadora();
-        assertEquals(5, calc.sumar(2, 3));
+        assertEquals(5, calc.sumar(2, 3) , "La suma de 2 y 3 debería ser 5");
     }
 
     @Test
