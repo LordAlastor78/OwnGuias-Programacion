@@ -1,23 +1,40 @@
 package ejercicio1;
 
 class Libro {
-    String titulo;
-    String autores;
-    String editorial;
-    int anho;
-    String isbn;
+    private final String titulo;
+    private final String autores;
+    private final String editorial;
+    private final int anho;
+    private final String isbn;
+    private final TipoLibro tipolibro;
 
-    // Constructor
+
+    // Constructor con TipoLibro
+    Libro(String titulo, String autores, String editorial, int anho, TipoLibro tipolibro) {
+        this.titulo = titulo;
+        this.autores = autores;
+        this.editorial = editorial;
+        this.anho = anho;
+        this.isbn = "desconocido";
+        this.tipolibro = tipolibro;
+    }
+
+    // Constructor sin TipoLibro
     Libro(String titulo, String autores, String editorial, int anho) {
         this.titulo = titulo;
         this.autores = autores;
         this.editorial = editorial;
         this.anho = anho;
         this.isbn = "desconocido";
+        this.tipolibro = null;
     }
 
     // Getters(devolver un atributo concreto) y Setters(modificar un atributo
     // concreto)
+
+    public String getTitulo() {
+        return titulo;
+    }
 
     public int getAnho() {
         return anho;
