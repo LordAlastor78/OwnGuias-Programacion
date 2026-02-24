@@ -1,7 +1,7 @@
 package ejercicio3;
 
 public class Articulo {
-    // ✅ Atributos PRIVADOS (encapsulación)
+    // Atributos PRIVADOS (encapsulación)
     private String nombre;
     private double precioBase;
     private TipoIVA tipoIVA;
@@ -32,4 +32,5 @@ public class Articulo {
     public String toString() {
         return nombre + ": " + String.format("%.2f", getPrecioFinal()) + " €";
     }
+
 }

@@ -90,4 +90,29 @@ public class Ejercicio1 {
          */
 
     }
+
+
+   /*  public static TipoLibro leeLibro2(Scanner scanner) {
+
+
+
+        TipoLibro[] tipos = TipoLibro.values();
+        TipoLibro tipoSeleccionado = null;
+
+        while (tipoSeleccionado == null) {
+            System.out.println("Selecciona el tipo de libro:");
+
+            for (int i = 0; i < tipos.length; i++) {
+               System.out.println((i + 1) + ".- " + tipos[i]); // Muestra las opciones al usuario
+            }
+
+            int opcion = Integer.parseInt(scanner.nextLine());// Lee la opción del usuario .parseInt convierte el String a int
+            if (opcion > 0 && opcion <= tipos.length) {
+                tipoSeleccionado = tipos[opcion - 1];
+            } else {
+                System.out.println("Opción inválida. Intenta de nuevo.");
+            }
+        }
+        return tipoSeleccionado;
+    } */
 }
