@@ -27,6 +27,10 @@ public class Articulo {
     public double getPrecioFinal() {
         return precioBase * (1 + tipoIVA.getPorcentaje());
     }
+    
+    public double calcularPrecioFinal() {
+        return tipoIVA.calcularPrecioFinal(precioBase);
+    }
 
     @Override
     public String toString() {
