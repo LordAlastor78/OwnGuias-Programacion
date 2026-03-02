@@ -180,17 +180,74 @@ Para concatenar eficientemente múltiples cadenas, especialmente en bucles, se r
 
 En POO, los objetos pueden compararse por identidad (si son la misma referencia en memoria) o por contenido (si sus estados son equivalentes según criterios lógicos). En Java, el operador `==` compara identidad, mientras que el método `equals` está diseñado para comparar contenido semántico.
 
-Por defecto, `equals` heredado de la clase `Object` compara identidad, comportándose igual que `==`. Sin embargo, muchas clases estándar, como `String`, sobrescriben `equals` para comparar contenido. Para cadenas, siempre debe utilizarse `equals` en lugar de `==`, ya que dos cadenas con el mismo texto pueden ser objetos distintos en memoria, dando un resultado falso con el operador de igualdad referencial.
+Por defecto, `equals` heredado de la clase `Object` compara **identidad**, comportándose igual que `==`. Se recomienda sobrescribir `equals` en clases personalizadas para definir criterios de equivalencia basados en el contenido de los objetos.
+-Ventajas: Permite comparar objetos de forma lógica, independientemente de su ubicación en memoria. Esto es esencial para colecciones como `HashSet` o `HashMap`, que dependen de `equals` para gestionar elementos únicos y claves.
+-Desventajas: Requiere una implementación cuidadosa para evitar violaciones de las propiedades de equivalencia (reflexiva, simétrica, transitiva) y puede ser más costoso en términos de rendimiento que la comparación por identidad.
+
+```java
+String s1 = new String("Hola");
+String s2 = new String("Hola");
+if (s1 == s2) {
+    System.out.println("s1 y s2 son la misma referencia");
+} else {
+    System.out.println("s1 y s2 son referencias distintas");
+}
+if (s1.equals(s2)) {
+    System.out.println("s1 y s2 tienen el mismo contenido");
+} else {
+    System.out.println("s1 y s2 tienen contenido diferente");
+}
+```
+
+
+Sin embargo, muchas clases estándar, como `String`, sobrescriben `equals` para comparar **contenido**. Para cadenas, siempre debe utilizarse `equals` en lugar de `==`, ya que dos cadenas con el mismo texto pueden ser objetos distintos en memoria, dando un resultado falso con el operador de igualdad referencial.
+-Ventajas: Permite comparar el valor de las cadenas, lo que es el comportamiento esperado en la mayoría de los casos.
+-Desventajas: Puede ser menos eficiente que `==` si se compara con frecuencia, aunque en la práctica esto suele ser insignificante para la mayoría de las aplicaciones.
+
+```java
+String s1 = "Hola";
+String s2 = "Hola";
+if (s1 == s2) {
+    System.out.println("s1 y s2 son la misma referencia");
+} else {
+    System.out.println("s1 y s2 son referencias distintas");
+}
+if (s1.equals(s2)) {
+    System.out.println("s1 y s2 tienen el mismo contenido");
+} else {
+    System.out.println("s1 y s2 tienen contenido diferente");
+}
+```
+
+
+En resumen, la comparación de objetos en POO depende del contexto y del diseño de la clase, siendo crucial entender la diferencia entre identidad y contenido para evitar errores lógicos en el código.
+
 
 ## 21. ¿Qué son las clases "wrapper" en un lenguaje de programación orientado a objetos? ¿Cómo se hace? ¿Es un proceso automático? ¿Qué ventajas tienen? ¿Todos los lenguajes orientados a objetos tienen tipos primitivos y necesitan wrappers?
 
 Las clases wrapper son envoltorios que permiten tratar tipos primitivos como objetos. En Java, por ejemplo, `Integer` envuelve a `int`, `Double` a `double`, etc. Esto es necesario en contextos que requieren objetos, como colecciones genéricas o reflexión, donde los primitivos no son admitidos directamente.
+
+-Ventajas: Permiten la interoperabilidad con APIs basadas en objetos, facilitan el uso de colecciones genéricas y permiten representar valores nulos, lo que no es posible con tipos primitivos. Además, proporcionan métodos útiles para convertir entre tipos y realizar operaciones comunes.
+
 
 Java proporciona autoboxing y unboxing, procesos automáticos realizados por el compilador que convierten entre primitivos y sus wrappers sin código explícito. Las ventajas incluyen interoperabilidad con APIs basadas en objetos y la posibilidad de almacenar valores nulos. No todos los lenguajes necesitan wrappers; lenguajes como Python o Ruby tratan todos los tipos como objetos desde el inicio, eliminando esta distinción artificial.
 
 ## 22. ¿En POO qué es un **tipo de dato enumerado**? ¿En Java, un tipo de dato enumerado es una clase? ¿Qué ventajas tienen en términos de encapsulación los enumerados en Java?
 
 Un tipo enumerado define un conjunto fijo y nombrado de constantes que representan los únicos valores válidos para una variable de ese tipo. En Java, los enumerados son clases especiales que extienden implícitamente `java.lang.Enum`, pudiendo contener campos, métodos, constructores y lógica asociada a cada constante.
+
+Ejemplo con IVA:
+
+```java
+public enum IVA {
+    GENERAL(0.21), REDUCIDO(0.10), SUPERREDUCIDO(0.04);
+    private final double tasa;
+    IVA(double tasa) { this.tasa = tasa; }
+    public double getTasa() { return tasa; }
+}
+```
+
+
 
 Esta naturaleza de clase ofrece ventajas significativas en encapsulación: cada constante puede encapsular estado y comportamiento específico, manteniendo los detalles internos privados. Por ejemplo, un enumerado `DíaSemana` puede incluir un campo privado para el número de día y métodos públicos para operaciones relacionadas, garantizando que solo los valores predefinidos sean válidos y que su comportamiento esté centralizado y protegido.
 

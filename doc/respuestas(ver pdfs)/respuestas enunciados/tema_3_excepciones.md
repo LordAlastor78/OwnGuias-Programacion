@@ -42,7 +42,7 @@ Otra opción es lanzar una excepción personalizada para indicar el error. Esto 
             double resultado = raiz(-4);
             System.out.println("La raíz es: " + resultado);
         } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage()); //vamos escalando el error hacia arriba, para que lo maneje el llamador
         }
     }
 }
