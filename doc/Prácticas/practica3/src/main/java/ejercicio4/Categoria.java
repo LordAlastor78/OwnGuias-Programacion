@@ -1,6 +1,6 @@
 package ejercicio4;
 
-public enum Categoria {
+public enum Categoria { // Enumeración para las categorías de los deportistas
     BENJAMIN,
     ALEVIN,
     INFANTIL,
@@ -8,7 +8,8 @@ public enum Categoria {
     JUVENIL,
     SENIOR;
 
-    public static Categoria fromCategoria(int edad) {
+    public static Categoria fromCategoria(int edad) { 
+        // Método estático para obtener la categoría a partir de la edad
         Categoria cat = SENIOR; // Por defecto, si no se cumple ninguna condición
 
         if (edad <= 8) {

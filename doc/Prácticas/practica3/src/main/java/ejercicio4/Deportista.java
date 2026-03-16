@@ -39,6 +39,10 @@ public class Deportista {
         return Categoria.fromCategoria(edad);
     }
 
+    public boolean esMayorDeEdad() {
+        return edad >= 18;
+    }
+
     public void setEdad(int edad) {
         if (edad < 0) {
             throw new IllegalArgumentException("Error: La edad no puede ser negativa.");
