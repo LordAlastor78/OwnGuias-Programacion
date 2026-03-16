@@ -19,7 +19,8 @@ Por favor, escribe en impersonal las respuestas.
 
 La función sería algo así:
 
-```#include <stdio.h>
+```c
+#include <stdio.h>
 #include <math.h>
 
 struct Punto {
