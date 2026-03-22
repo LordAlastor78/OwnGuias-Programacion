@@ -14,26 +14,44 @@ En el `main` de `Ejercicio1` crea varias temperaturas y muéstralas todas conver
 
 import java.util.Scanner;
 
+class Temperatura {
+    private double valor;
+    private String escala;
 
+    public Temperatura(double valor, String escala) {
+        this.valor = valor;
+        this.escala = escala;
+    }
+
+    public double toCelsius() {
+        switch (escala.toUpperCase()) {
+            case "CELSIUS":
+                return valor;
+            case "FAHRENHEIT":
+                return (valor - 32) / 1.8;
+            case "KELVIN":
+                return valor - 273.15;
+            default:
+                throw new IllegalArgumentException("Escala desconocida: " + escala);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%.1f °C", toCelsius());
+    }
+}
 
 public class Ejercicio1 {
 
     public static void main(String[] args) {
-        
-    System.out.println("Introduce la temperatura que quieres convertir");
 
-    Temperatura temp1 = new Temperatura();
+        System.out.println("Introduce la temperatura que quieres convertir");
 
-    System.out.println(temp1.toCelsius());
+        Temperatura temp1 = new Temperatura(36.6, "Celsius");
 
-    
-
-
-
-
+        System.out.println(temp1.toCelsius());
 
     }
-
-    
 
 }

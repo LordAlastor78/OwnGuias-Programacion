@@ -2,12 +2,12 @@ package ejercicio1;
 
 public class Temperatura {
 
-    
     private float celsius;
 
     private float farenheit = 0;
 
     private int kelvin = 0;
+
     public Temperatura(float celsius) {
 
         this.celsius = celsius;
@@ -16,15 +16,14 @@ public class Temperatura {
 
     }
 
-    public static void showCelsius(){
+    public void showCelsius() {
 
-    try {
-        System.out.println("La temperatura en grados celsius es : " + celsius);
-    } catch (Exception e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-    }
-
+        try {
+            System.out.println("La temperatura en grados celsius es : " + celsius);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
     }
 
