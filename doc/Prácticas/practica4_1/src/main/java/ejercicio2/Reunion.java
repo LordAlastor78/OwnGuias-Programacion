@@ -79,6 +79,14 @@ public class Reunion {
             asistentes.remove(e);
         }
     }
-    
+
+    public void setSecretario(Empleado nuevoSecretario) {
+
+        if (!asistentes .contains(nuevoSecretario)) {
+            throw new IllegalArgumentException("El secretario debe ser un asistente a la reunión");
+        }
+        this.secretario = nuevoSecretario;
+    }
+
 
 }
