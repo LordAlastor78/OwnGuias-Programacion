@@ -1,6 +1,8 @@
 // archivo: ejercicio2/Articulo.java
 package ejercicio2;
 
+import ejercicio1.Autor;
+
 /*Ejercicio 1: Autor
 
 Crea la clase Autor, que guarda la información del autor de una publicación científica: su identificador (ORCID: Open Researcher and Contributor ID, es un identificador alfanumérico único para cada investigador), su apellidos, nombre e institución al que corresponde. Deberá ser inmutable, tener al menos un constructor y métodos de acceso para todos los atributos (getter).
@@ -30,14 +32,28 @@ Usando la clase Autor, modifica la clase Publicacion para conocer el primer auto
 
 */
 
+// Artículo es una publicación especializada. Hereda los datos comunes de Publicacion.
 public final class Articulo extends Publicacion {
     private final String nombreRevista;
     private final int volumen;
     private final int paginaInicial;
     private final int paginaFinal;
 
-    public Articulo(String titulo, int año, String nombreRevista, int volumen, int paginaInicial, int paginaFinal) {
-        super(titulo, año);
+    public Articulo(String titulo, int anio, String nombreRevista, int volumen, int paginaInicial, int paginaFinal,
+            Autor primerAutor, int citas) {
+        // Llamamos al constructor del padre para inicializar título, año, autor y
+        // citas.
+        super(titulo, anio, primerAutor, citas);
+        if (nombreRevista == null || nombreRevista.isBlank()) {
+            // isBlank() valida nulos/espacios en blanco en lugar de solo cadena vacía.
+            throw new IllegalArgumentException("Error: El nombre de la revista no puede ser nulo o vacío.");
+        }
+        if (volumen <= 0) {
+            throw new IllegalArgumentException("Error: El volumen debe ser mayor que cero.");
+        }
+        if (paginaInicial <= 0 || paginaFinal <= 0 || paginaFinal < paginaInicial) {
+            throw new IllegalArgumentException("Error: Páginas inválidas.");
+        }
         this.nombreRevista = nombreRevista;
         this.volumen = volumen;
         this.paginaInicial = paginaInicial;
@@ -63,16 +79,12 @@ public final class Articulo extends Publicacion {
 
     @Override
     public String toString() {
-        return // %n es un salto de línea, %n es un salto de línea, %s es un literal de formato
-               // para cadenas de texto
-               // %s es un literal de formato para enteros , %d es para enteros, %s es para
-               // cadenas de texto
-        """
+        // Usamos super.toString() para reutilizar el formato de Publicacion.
+        return super.toString() + """
                 Revista: %s
                 Volumen: %d
                 Páginas: %d-%d
-                     """
-                .formatted(super.toString(), nombreRevista, volumen, paginaInicial, paginaFinal);
-    } // el super.toString() llama al toString() de la clase padre (Publicacion) y lo
-      // concatena con el resto de información del artículo
+                """.formatted(nombreRevista, volumen, paginaInicial, paginaFinal);
+    }
+
 }

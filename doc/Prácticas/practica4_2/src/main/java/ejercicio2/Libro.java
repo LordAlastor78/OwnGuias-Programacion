@@ -1,5 +1,7 @@
 package ejercicio2;
 
+import ejercicio1.Autor;
+
 /*Ejercicio 1: Autor
 
 Crea la clase Autor, que guarda la información del autor de una publicación científica: su identificador (ORCID: Open Researcher and Contributor ID, es un identificador alfanumérico único para cada investigador), su apellidos, nombre e institución al que corresponde. Deberá ser inmutable, tener al menos un constructor y métodos de acceso para todos los atributos (getter).
@@ -29,13 +31,14 @@ Usando la clase Autor, modifica la clase Publicacion para conocer el primer auto
 
 */
 
+// Libro es otra publicación concreta. Hereda la información común de Publicacion.
 public class Libro extends Publicacion {
 
-    private String editorial;
-    private String lugar;
+    private final String editorial;
+    private final String lugar;
 
-    public Libro(String titulo, int año, String editorial, String lugar) {
-        super(titulo, año);
+    public Libro(String titulo, int anio, String editorial, String lugar, Autor primerAutor, int citas) {
+        super(titulo, anio, primerAutor, citas);
 
         if (editorial == null || editorial.isBlank()) {
             throw new IllegalArgumentException("Error: La editorial no puede ser nula o vacía.");
@@ -60,12 +63,17 @@ public class Libro extends Publicacion {
 
     @Override
     public String toString() {
+        // Aquí usamos getters del padre en lugar de super.toString().
+        // Esto evita depender del formato interno de Publicacion.
         return """
                 Año: %s
                 Título: %s
+                Primer autor: %s
+                Citas: %s
                 Editorial: %s
                 Lugar: %s
-                """.formatted(getAño(), getTitulo(), getEditorial(), getLugar());
-
+                """.formatted(getAnio(), getTitulo(),
+                getPrimerAutor().getNombre() + " " + getPrimerAutor().getApellidos(), getCitas(), getEditorial(),
+                getLugar());
     }
 }

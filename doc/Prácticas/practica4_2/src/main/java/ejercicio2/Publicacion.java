@@ -1,5 +1,7 @@
 package ejercicio2;
 
+import ejercicio1.Autor;
+
 /*Ejercicio 1: Autor
 
 Crea la clase Autor, que guarda la información del autor de una publicación científica: su identificador (ORCID: Open Researcher and Contributor ID, es un identificador alfanumérico único para cada investigador), su apellidos, nombre e institución al que corresponde. Deberá ser inmutable, tener al menos un constructor y métodos de acceso para todos los atributos (getter).
@@ -29,35 +31,48 @@ Usando la clase Autor, modifica la clase Publicacion para conocer el primer auto
 
 */
 
-public class Publicacion {// Lo que hace abstract es que no se puedan crear objetos de tipo Publicacion,
-                          // pero como no lo hemos visto aun, lo dejamos asi. De hecho, en el ejercicio 3
-                          // se pide crear un List de Publicacion, y si la clase es abstract no se pueden
-                          // crear objetos de tipo Publicacion, por lo que no se podría hacer el ejercicio
-                          // 3.
+public class Publicacion {
 
-    protected int año;
-    protected String titulo;
+    protected final int anio;
+    protected final String titulo;
+    protected final int citas;
+    protected final Autor primerAutor;
 
-    public Publicacion(String titulo, int año) {
+    public Publicacion(String titulo, int anio, Autor primerAutor, int citas) {
 
-        if (año == 0) {
+        if (anio == 0) {
             throw new IllegalArgumentException("Error: El año no puede ser cero.");
         }
         if (titulo == null || titulo.isBlank()) {
             throw new IllegalArgumentException("Error: El título no puede ser nulo o vacío.");
         }
+        if (primerAutor == null) {
+            throw new IllegalArgumentException("Error: El primer autor no puede ser nulo.");
+        }
+        if (citas < 0) {
+            throw new IllegalArgumentException("Error: El número de citas no puede ser negativo.");
+        }
 
         this.titulo = titulo;
-        this.año = año;
-
+        this.anio = anio;
+        this.primerAutor = primerAutor;
+        this.citas = citas;
     }
 
-    public int getAño() {
-        return año;
+    public int getAnio() {
+        return anio;
     }
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public int getCitas() {
+        return citas;
+    }
+
+    public Autor getPrimerAutor() {
+        return primerAutor;
     }
 
     @Override
@@ -65,7 +80,9 @@ public class Publicacion {// Lo que hace abstract es que no se puedan crear obje
         return """
                 Año: %s
                 Título: %s
-                 """.formatted(año, titulo);
+                Primer autor: %s
+                Citas: %s
+                """.formatted(anio, titulo, primerAutor.getNombre() + " " + primerAutor.getApellidos(), citas);
     }
 
 }
