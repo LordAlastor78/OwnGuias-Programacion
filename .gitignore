@@ -1,44 +1,19 @@
-# Build output
-target/
-**/target/
-
-# Maven
-.mvn/repository
-
-# Compiled class files
-*.class
-
-# Package files
-*.jar
-*.war
-*.ear
-*.zip
-
-# Logs
-*.log
-
-# IDEs and editors
-.idea/
-*.iml
-.vscode/
-.project
-.classpath
-.settings/
-out/
-
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Temporary/backup files
-*~
-*.swp
-
-# PDF build artifacts
+# Generated documentation
 pdf/build
 pdf/mermaid-images
 
-# Test reports
+# Maven build output
+**/target/
+**/test-classes/
 **/surefire-reports/
+**/maven-status/
 
+# IDE and editor settings
+.vscode/
+.idea/
+*.iml
+*.log
+.DS_Store
+
+# Generated upgrade logs and temporary data
+.github/java-upgrade/
