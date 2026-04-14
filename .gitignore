@@ -1,2 +1,44 @@
+# Build output
+target/
+**/target/
+
+# Maven
+.mvn/repository
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+
+# Logs
+*.log
+
+# IDEs and editors
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary/backup files
+*~
+*.swp
+
+# PDF build artifacts
 pdf/build
 pdf/mermaid-images
+
+# Test reports
+**/surefire-reports/
+

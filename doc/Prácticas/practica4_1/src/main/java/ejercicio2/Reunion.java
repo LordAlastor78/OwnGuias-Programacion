@@ -64,10 +64,6 @@ public class Reunion {
         return secretario;
     }
 
-    public void setSecretario(Empleado secretario) {
-        this.secretario = secretario;
-    }
-
     public void agregarAsistente(Empleado e) {
         if (asistentes != null && !asistentes.contains(e)) {
             asistentes.add(e);
@@ -81,12 +77,10 @@ public class Reunion {
     }
 
     public void setSecretario(Empleado nuevoSecretario) {
-
-        if (!asistentes .contains(nuevoSecretario)) {
+        if (asistentes == null || !asistentes.contains(nuevoSecretario)) {
             throw new IllegalArgumentException("El secretario debe ser un asistente a la reunión");
         }
         this.secretario = nuevoSecretario;
     }
-
 
 }

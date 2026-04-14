@@ -5,15 +5,15 @@ public class Libro {
     private String titulo;
     private String autores;
     private String editorial;
-    private String año;
+    private String anio;
     private String isbn;
 
-    // Constructor: recibe los datos y los GUARDA en los atributos
-    public Libro(String titulo, String autores, String editorial, String año, String isbn) {
-        this.titulo = titulo;       // "this.titulo" = atributo, "titulo" = parámetro
+    // Constructor: recibe los datos y los guarda en los atributos
+    public Libro(String titulo, String autores, String editorial, String anio, String isbn) {
+        this.titulo = titulo; // this.titulo = atributo, titulo = parametro
         this.autores = autores;
         this.editorial = editorial;
-        this.año = año;
+        this.anio = anio;
         this.isbn = isbn;
     }
 
@@ -21,9 +21,9 @@ public class Libro {
     @Override
     public String toString() {
         return "Titulo = " + titulo + "\n" +
-               "Autores = " + autores + "\n" +
-               "Editorial = " + editorial + "\n" +
-               "Año = " + año + "\n" +
-               "Isbn = " + isbn;
+                "Autores = " + autores + "\n" +
+                "Editorial = " + editorial + "\n" +
+                "Anio = " + anio + "\n" +
+                "Isbn = " + isbn;
     }
 }

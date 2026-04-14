@@ -23,8 +23,8 @@ public class DeportistaTest {
     @Test
     public void testDeportistaCategoria() {
 
-        Deportista d1 = new Deportista("9", "bebé", 9);
-        assertEquals(Categoria.BENJAMIN, d1.getCategoria());
+        Deportista d1 = new Deportista("9", "bebe", 9);
+        assertEquals(Categoria.ALEVIN, d1.getCategoria());
 
     }
 

@@ -34,7 +34,7 @@ public class Ejercicio4 {
                 opcion = menu(teclado);
                 switch (opcion) {
                     case 1 -> {
-                        añadirDeportista(teclado, club, numDeportistas);
+                        anadirDeportista(teclado, club, numDeportistas);
                         numDeportistas++;
                     }
                     case 2 -> {
@@ -92,12 +92,11 @@ public class Ejercicio4 {
         return new Deportista(dni, nombre, edad);
     }
 
-    private static void añadirDeportista(Scanner teclado, Deportista[] club, int numDeportistas) {
+    private static void anadirDeportista(Scanner teclado, Deportista[] club, int numDeportistas) {
         // Comprobar si el vector esta lleno.
         // En el caso de que este lleno lanzar una excepción
         // En el caso de que no este lleno leer el deportista del teclado y añadirlo al
         // vector
-
 
         if (numDeportistas >= club.length) {
             throw new IllegalArgumentException("Error: El club ya ha alcanzado su capacidad máxima de deportistas.");
@@ -115,14 +114,15 @@ public class Ejercicio4 {
         // Si tiene recorrer los deportistas del vector y concatener sus datos en el
         // StringBuilder
 
-
-        if(numDeportistas == 0) {
+        if (numDeportistas == 0) {
             toReturn.append("No hay deportistas en el club.");
         } else {
             for (int i = 0; i < numDeportistas; i++) {
-                toReturn.append(club[i]).append("\n"); 
-                //append lo que hace es añadir al final del StringBuilder el texto que le pasamos como argumento
-                //el StringBuilder es una cadena de texto a partir de varias partes o hacer muchas modificaciones a una cadena.
+                toReturn.append(club[i]).append("\n");
+                // append lo que hace es añadir al final del StringBuilder el texto que le
+                // pasamos como argumento
+                // el StringBuilder es una cadena de texto a partir de varias partes o hacer
+                // muchas modificaciones a una cadena.
             }
 
         }
@@ -151,16 +151,16 @@ public class Ejercicio4 {
         // Devolver el número de deportistas por categoría
 
         toReturn.append("Número total de deportistas: ").append(numDeportistas).append("\n");
-        toReturn.append("Número de plazas libres en el club: ").append(club.length - numDeportistas).append("\n");  
+        toReturn.append("Número de plazas libres en el club: ").append(club.length - numDeportistas).append("\n");
         toReturn.append("Número de deportistas por categoría:\n");
-        int[] categorias = new int[Categoria.values().length]; // Creamos un array para contar el número de deportistas por categoría
+        int[] categorias = new int[Categoria.values().length]; // Creamos un array para contar el número de deportistas
+                                                               // por categoría
         for (int i = 0; i < numDeportistas; i++) {
             categorias[club[i].getCategoria().ordinal()]++; // ordinal() devuelve el índice de la categoría en el enum
         }
         for (int i = 0; i < categorias.length; i++) {
             toReturn.append("\t").append(Categoria.values()[i]).append(": ").append(categorias[i]).append("\n");
         }
-        
 
         return toReturn.toString();
     }

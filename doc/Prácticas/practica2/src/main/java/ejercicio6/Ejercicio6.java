@@ -40,11 +40,9 @@ public class Ejercicio6 {
         return new Ejercicio6(nuevaParteReal, nuevaParteImaginaria);
     }
 
-    //Metodos factoria
-    public static NumeroComplejo real ( double real) {
-        return new NumeroComplejo(real, 0);
+    // Metodo factoría
+    public static Ejercicio6 real(double real) {
+        return new Ejercicio6(real, 0);
     }
-
-    
 
 }

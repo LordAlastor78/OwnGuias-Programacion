@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class AplicacionFichero {
    public static void main(String[] args) {
       Scanner entrada = new Scanner(System.in);
-      
+
       OperadorFichero operadorFichero = null;
 
       try {
@@ -53,7 +53,7 @@ public class AplicacionFichero {
 
             if (linea.length() > 0) {
 
-               operadorFichero.añadirTexto(linea + "\n");
+               operadorFichero.anadirTexto(linea + "\n");
 
                System.out.println("Línea añadida");
             }
