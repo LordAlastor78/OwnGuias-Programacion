@@ -1,2 +1,19 @@
+# Generated documentation
 pdf/build
 pdf/mermaid-images
+
+# Maven build output
+**/target/
+**/test-classes/
+**/surefire-reports/
+**/maven-status/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.iml
+*.log
+.DS_Store
+
+# Generated upgrade logs and temporary data
+.github/java-upgrade/

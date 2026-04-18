@@ -7,7 +7,7 @@ public class Correo {
     private String usuario;
     private String servidor;
 
-    public Correo(String nombre, String apellidos, String usuario, String servidor) {
+    public Correo(String nombre, String apellidos, String usuario, String servidor) { //constructor completo
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.usuario = usuario;
