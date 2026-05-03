@@ -19,13 +19,16 @@ un número correcto. */
 
 import java.util.Scanner;
 
-public class Division {
+class Division {
+    public static int divide(int a, int b) throws NumberFormatException {
 
-    public static int divide(int a, int b) throws ArithmeticException {
-        if (b == 0) { // Si el divisor es cero, se lanza una excepción de tipo ArithmeticException
-            throw new ArithmeticException("División por cero no permitida");
+        if (b == 0) {
+
+            throw new ArithmeticException(" El denominador no puede ser cero");
         }
+
         return a / b;
+
     }
 
     public static void main(String[] args) {
@@ -34,38 +37,17 @@ public class Division {
         String linea;
         Scanner scan = new Scanner(System.in);
 
-        num1 = leerEntero(scan, "Introduzca dividendo: "); // Se puede usar el mismo método para ambos números, ya que el mensaje se le pasa como argumento
+        System.out.print("\nIntroduzca dividendo: ");
+        linea = scan.nextLine();
+        
+        num1 = Integer.parseInt(linea); 
 
-        num2 = leerEntero(scan, "Introduzca divisor: ");
+        System.out.print("\nIntroduzca divisor: ");
+        linea = scan.nextLine();
+        num2 = Integer.parseInt(linea);
 
-        try {
-            System.out.println("\nEl resultado es: " + divide(num1, num2));
-        } catch (ArithmeticException e) { // Si se produce una división por cero, se captura la excepción y se muestra un mensaje de error
-            System.out.println("No se puede dividir por cero: " + e.getMessage());
-        }
+        System.out.println("\nEl resultado es: " + divide(num1, num2));
 
         scan.close();
-
     }
-
-    private static int leerEntero(Scanner entrada, String mensaje) {
-
-        String linea;
-        int num;
-
-        while (true) { // Bucle infinito hasta que se introduzca un número entero válido
-
-            System.out.println("\n " + mensaje);
-
-            linea = entrada.nextLine();
-            try { // Intentamos convertir la entrada a un número entero
-                return Integer.parseInt(linea); // Si la conversión es exitosa, se devuelve el número entero
-            } catch (NumberFormatException e) { // Si la conversión falla, se captura la excepción y se muestra un mensaje de error
-
-                System.out.println("Solo numeros enteros" + e.getMessage()); // Se muestra el mensaje de error y se vuelve a pedir la entrada
-            }   
-        }
-
-    }
-
 }
