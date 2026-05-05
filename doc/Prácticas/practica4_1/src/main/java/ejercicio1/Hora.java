@@ -2,25 +2,16 @@ package ejercicio1;
 
 public class Hora {
 
-    private final int hora;
-    private final int minuto;
+    private final int horas;
+    private final int minutos;
+    private final int segundos;
 
-    public Hora(int hora, int minuto) {
-
-        this.hora = hora;
-        this.minuto = minuto;
+    public Hora(int horas, int minutos, int segundos) {
+        this.horas = horas;
+        this.minutos = minutos;
+        this.segundos = segundos;
     }
 
-    public Hora(Hora other) {
-        this(other.hora, other.minuto);
-    }
-
-    public int getHora() {
-        return hora;
-    }
-
-    public int getMinuto() {
-        return minuto;
-    }
+    
 
 }
