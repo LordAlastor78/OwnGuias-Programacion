@@ -1,10 +1,9 @@
 {
-    // ===== THEME / UI =====
+
     "workbench.colorTheme": "Tokyo Night",
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.editor.empty.hint": "hidden",
     "breadcrumbs.enabled": true,
-    // ===== EDITOR CORE =====
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.lineHeight": 1.7,
@@ -21,7 +20,6 @@
         80,
         120
     ],
-    // ===== EDITOR BEHAVIOR =====
     "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
@@ -47,24 +45,19 @@
     "problems.decorations.enabled": true,
     "editor.matchBrackets": "always",
     "editor.linkedEditing": true,
-    // ===== EXPLORER / SECURITY =====
     "explorer.confirmDelete": true,
     "explorer.confirmDragAndDrop": true,
     "security.workspace.trust.untrustedFiles": "prompt",
-    // ===== EMMET =====
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     },
     "emmet.triggerExpansionOnTab": true,
-    // ===== GIT =====
     "git.autofetch": true,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "git.openRepositoryInParentFolders": "always",
-    // ===== TERMINAL =====
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.initialHint": false,
-    // ===== TYPESCRIPT / JAVASCRIPT =====
     "typescript.suggest.autoImports": true,
     "javascript.suggest.autoImports": true,
     "typescript.inlayHints.parameterNames.enabled": "all",
@@ -73,7 +66,6 @@
     "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
     "typescript.suggest.completeFunctionCalls": true,
     "javascript.suggest.completeFunctionCalls": true,
-    // ===== JAVA =====
     "java.configuration.updateBuildConfiguration": "interactive",
     "java.compile.nullAnalysis.mode": "automatic",
     "java.configuration.checkProjectSettingsExclusions": false,
@@ -104,11 +96,9 @@
     "java.debug.settings.onBuildFailureProceed": true,
     "java.format.enabled": true,
     "java.format.settings.profile": "GoogleStyle",
-    // ===== PYTHON =====
     "python.analysis.completeFunctionParens": true,
     "python.analysis.typeCheckingMode": "standard",
     "python.createEnvironment.trigger": "off",
-    // ===== MARKDOWN =====
     "markdown.validate.enabled": false,
     "markdownlint.enable": false,
     "markdownlint.config": {
@@ -116,12 +106,9 @@
         "MD033": false,
         "MD041": false
     },
-    // ===== MAKEFILE =====
     "makefile.configureOnOpen": true,
-    // ===== TELEMETRY =====
     "telemetry.telemetryLevel": "off",
     "redhat.telemetry.enabled": false,
-    // ===== VSCODE PETS =====
     "vscode-pets.theme": "forest",
     "vscode-pets.throwBallWithMouse": true,
     "vscode-pets.petSize": "small"
