@@ -1,5 +1,4 @@
 {
-
     "workbench.colorTheme": "Tokyo Night",
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.editor.empty.hint": "hidden",
@@ -95,8 +94,8 @@
     ],
     "java.completion.guessMethodArguments": true,
     "java.completion.smartOnSemicolon": true,
-    "java.codeGeneration.generateComments": true,
-    "java.codeGeneration.methods.generateComments": true
+    "java.codeGeneration.generateComments": false,
+    "java.codeGeneration.methods.generateComments": false,
     "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
     "java.codeGeneration.toString.template": "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
     "java.maxConcurrentBuilds": 4,
