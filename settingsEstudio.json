@@ -4,6 +4,7 @@
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.editor.empty.hint": "hidden",
     "breadcrumbs.enabled": true,
+    "debug.inlineValues": "on",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.lineHeight": 1.7,
@@ -95,6 +96,7 @@
     "java.completion.guessMethodArguments": true,
     "java.completion.smartOnSemicolon": true,
     "java.codeGeneration.generateComments": true,
+    "java.codeGeneration.methods.generateComments": true
     "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
     "java.codeGeneration.toString.template": "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
     "java.maxConcurrentBuilds": 4,
@@ -104,6 +106,7 @@
     "java.eclipse.downloadSources": true,
     "java.maven.downloadSources": true,
     "java.autobuild.enabled": true,
+    "java.explorer.packagePresentation": "hierarchical",
     "java.completion.favoriteStaticMembers": [
         "org.junit.Assert.*",
         "org.junit.jupiter.api.Assertions.*",
@@ -128,5 +131,5 @@
     "redhat.telemetry.enabled": false,
     "vscode-pets.theme": "forest",
     "vscode-pets.throwBallWithMouse": true,
-    "vscode-pets.petSize": "small"
+    "vscode-pets.petSize": "small",
 }
