@@ -1,11 +1,10 @@
 {
+    // ===== THEME / UI =====
     "workbench.colorTheme": "Tokyo Night",
     "workbench.iconTheme": "catppuccin-mocha",
-    "window.menuBarVisibility": "compact",
-    "window.commandCenter": false,
-    "workbench.activityBar.location": "top",
-    "workbench.sideBar.location": "right",
     "workbench.editor.empty.hint": "hidden",
+    "breadcrumbs.enabled": true,
+    // ===== EDITOR CORE =====
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.lineHeight": 1.7,
@@ -22,6 +21,7 @@
         80,
         120
     ],
+    // ===== EDITOR BEHAVIOR =====
     "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
@@ -38,26 +38,33 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "on",
-    "editor.hover.enabled": true,
+    "editor.hover.enabled": "on",
     "editor.hover.delay": 150,
     "editor.parameterHints.enabled": true,
     "editor.inlayHints.enabled": "on",
     "editor.lightbulb.enabled": "on",
     "editor.renderValidationDecorations": "on",
     "problems.decorations.enabled": true,
+    "editor.matchBrackets": "always",
+    "editor.linkedEditing": true,
+    // ===== EXPLORER / SECURITY =====
     "explorer.confirmDelete": true,
     "explorer.confirmDragAndDrop": true,
     "security.workspace.trust.untrustedFiles": "prompt",
+    // ===== EMMET =====
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     },
     "emmet.triggerExpansionOnTab": true,
+    // ===== GIT =====
     "git.autofetch": true,
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "git.openRepositoryInParentFolders": "always",
+    // ===== TERMINAL =====
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.initialHint": false,
+    // ===== TYPESCRIPT / JAVASCRIPT =====
     "typescript.suggest.autoImports": true,
     "javascript.suggest.autoImports": true,
     "typescript.inlayHints.parameterNames.enabled": "all",
@@ -66,6 +73,7 @@
     "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
     "typescript.suggest.completeFunctionCalls": true,
     "javascript.suggest.completeFunctionCalls": true,
+    // ===== JAVA =====
     "java.configuration.updateBuildConfiguration": "interactive",
     "java.compile.nullAnalysis.mode": "automatic",
     "java.configuration.checkProjectSettingsExclusions": false,
@@ -96,9 +104,11 @@
     "java.debug.settings.onBuildFailureProceed": true,
     "java.format.enabled": true,
     "java.format.settings.profile": "GoogleStyle",
+    // ===== PYTHON =====
     "python.analysis.completeFunctionParens": true,
     "python.analysis.typeCheckingMode": "standard",
     "python.createEnvironment.trigger": "off",
+    // ===== MARKDOWN =====
     "markdown.validate.enabled": false,
     "markdownlint.enable": false,
     "markdownlint.config": {
@@ -106,15 +116,12 @@
         "MD033": false,
         "MD041": false
     },
+    // ===== MAKEFILE =====
     "makefile.configureOnOpen": true,
+    // ===== TELEMETRY =====
     "telemetry.telemetryLevel": "off",
     "redhat.telemetry.enabled": false,
-    "breadcrumbs.enabled": true,
-    "editor.gotoLocation.multipleDefinitions": "peek",
-    "editor.gotoLocation.multipleReferences": "peek",
-    "editor.gotoLocation.multipleImplementations": "peek",
-    "editor.matchBrackets": "always",
-    "editor.linkedEditing": true,
+    // ===== VSCODE PETS =====
     "vscode-pets.theme": "forest",
     "vscode-pets.throwBallWithMouse": true,
     "vscode-pets.petSize": "small"
