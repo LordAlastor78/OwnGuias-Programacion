@@ -8,6 +8,7 @@ public final class Autor {
 
     // Constructor completo
     public Autor(String orcid, String apellidos, String nombre, String institucion) {
+
         if (orcid == null || orcid.isBlank()) {
             throw new IllegalArgumentException("El ORCID no puede ser nulo o vacío.");
         }

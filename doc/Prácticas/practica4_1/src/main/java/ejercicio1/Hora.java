@@ -12,6 +12,17 @@ public class Hora {
         this.segundos = segundos;
     }
 
-    
+
+    public int getHoras() {
+        return horas;
+    }
+
+    public int getMinutos() {
+        return minutos;
+    }
+
+    public int getSegundos() {
+        return segundos;
+    }
 
 }

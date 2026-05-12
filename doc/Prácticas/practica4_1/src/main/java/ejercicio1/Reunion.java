@@ -5,26 +5,30 @@ import java.security.AlgorithmParameterGeneratorSpi;
 
 public class Reunion {
 
-    private String asunto;
-    private String lugar;
-    private Hora hora;
-    private Fecha fecha;
+   private String asunto;
+   private String lugar;
+   private Hora hora;
+   private Fecha fecha;
 
-    public Reunion(String asunto, String lugar, Hora hora, Fecha fecha) {
+   public Reunion(String asunto, String lugar, Hora hora, Fecha fecha) {
 
-        this.asunto = asunto;
-        this.lugar = lugar;
-        this.hora = hora;
-        this.fecha = fecha;
+      this.asunto = asunto;
+      this.lugar = lugar;
+      this.hora = hora;
+      this.fecha = fecha;
 
-    }
+   }
 
-    public void nuevaReunion(String asunto, String lugar, Hora hora, Fecha fecha) {
+   public void nuevaReunion(String asunto, String lugar, Hora hora, Fecha fecha) {
 
-        Reunion newReunion = new Reunion(asunto, lugar, hora, leerFecha())
+      Reunion newReunion = new Reunion(asunto, lugar, hora, fecha);
 
-   
+   }
 
-    }
+   public void crearFecha(Fecha fecha) {
+
+      this.fecha = new Fecha(fecha.getDia(), fecha.getMes(), fecha.getAño());
+
+   }
 
 }
